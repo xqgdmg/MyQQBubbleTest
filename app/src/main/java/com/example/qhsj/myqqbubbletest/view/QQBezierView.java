@@ -12,7 +12,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
-import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -54,7 +53,7 @@ public class QQBezierView extends android.support.v7.widget.AppCompatTextView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //获得根View
-        View rootView = getRootView();
+        View rootView = getRootView(); // Finds the topmost view in the current view hierarchy.
         //获得触摸位置在全屏所在位置
         float mRawX = event.getRawX();
         float mRawY = event.getRawY();
@@ -64,7 +63,7 @@ public class QQBezierView extends android.support.v7.widget.AppCompatTextView {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 //获得当前View在屏幕上的位置
                 int[] cLocation = new int[2];
-                getLocationOnScreen(cLocation);
+                getLocationOnScreen(cLocation); // 系统的方法
                 if (rootView instanceof ViewGroup) {
                     //初始化拖拽时显示的View
                     dragView = new DragView(getContext());

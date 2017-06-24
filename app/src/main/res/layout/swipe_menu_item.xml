@@ -25,7 +25,6 @@
             android:text="HelloWorld"
             android:textSize="16sp" />
 
-
         <com.example.qhsj.myqqbubbletest.view.QQBezierView
             android:id="@+id/qq_point"
             android:layout_width="wrap_content"
